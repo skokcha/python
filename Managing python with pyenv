@@ -1,0 +1,50 @@
+Managing python with pyenv
+Read from: https://realpython.com/intro-to-pyenv/
+https://medium.com/python-every-day/python-development-on-macos-with-pyenv-2509c694a808
+
+To see a list of Python versions
+$ pyenv install --list
+
+To install a specific versions
+$ pyenv install -v 3.7.2
+
+To look at installation location
+$ ls ~/.pyenv/versions/
+
+
+All of your versions will be located here. This is handy because removing these versions is trivial:
+$ rm -rf ~/.pyenv/versions/2.7.15
+
+Of course pyenv also provides a command to uninstall a particular Python version:
+
+$ pyenv uninstall 2.7.15
+
+pyenv versions
+
+To change to s specific version:
+pyenv global 2.7.15
+
+Set Local Python
+To set a Python version for a specific project, cd into your project and then run:
+pyenv local <python-version>
+
+install virtualenv:
+python3 -m pip install --user virtualenv
+
+Create a virtual environment with venv (old way. It's harder to give specify which version to use.)
+python3 -m venv env
+source env/bin/activate
+deactivate
+
+
+
+pyenv creating virtual environments:
+$ pyenv virtualenv <python_version> <environment_name>
+$ pyenv virtualenv 3.6.8 myproject
+$ pyenv local myproject
+$ pyenv which python
+pyenv which pip
+$ pyenv activate <environment_name>
+$ pyenv deactivate
+Existing environments can be listed with:
+$ pyenv virtualenvs
